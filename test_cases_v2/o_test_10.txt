@@ -1,0 +1,267 @@
+COMMAND: C 10
+COMMAND: R
+COMMAND: W
+Capacity = 10
+Size = 10
+250
+32
+49
+13
+10
+11
+17
+8
+4
+2
+COMMAND: I 2 56
+Before insert operation:
+Capacity = 10
+Size = 10
+250
+32
+49
+13
+10
+11
+17
+8
+4
+2
+After insert operation:
+Capacity = 16
+Size = 11
+250
+56
+49
+13
+32
+11
+17
+8
+4
+2
+10
+COMMAND: I 1 14
+COMMAND: I 1 176
+COMMAND: I 1 46
+COMMAND: I 1 35
+COMMAND: I 1 3
+COMMAND: I 2 99
+Before insert operation:
+Capacity = 16
+Size = 16
+250
+56
+176
+13
+32
+49
+46
+8
+4
+2
+10
+11
+14
+17
+35
+3
+After insert operation:
+Capacity = 32
+Size = 17
+250
+99
+176
+56
+32
+49
+46
+13
+4
+2
+10
+11
+14
+17
+35
+3
+8
+COMMAND: D 2
+Before delete max operation:
+Capacity = 32
+Size = 17
+250
+99
+176
+56
+32
+49
+46
+13
+4
+2
+10
+11
+14
+17
+35
+3
+8
+After delete max operation:
+Capacity = 32
+Size = 16
+176
+99
+49
+56
+32
+14
+46
+13
+4
+2
+10
+11
+8
+17
+35
+3
+Deleted max = 250
+COMMAND: D 1
+Deleted max = 176
+COMMAND: K 2 16 177
+Error: invalid index
+COMMAND: W
+Capacity = 32
+Size = 15
+99
+56
+49
+13
+32
+14
+46
+3
+4
+2
+10
+11
+8
+17
+35
+COMMAND: K 2 15 100
+Before increase key operation:
+Capacity = 32
+Size = 15
+99
+56
+49
+13
+32
+14
+46
+3
+4
+2
+10
+11
+8
+17
+35
+After increase key operation:
+Capacity = 32
+Size = 15
+100
+56
+99
+13
+32
+14
+49
+3
+4
+2
+10
+11
+8
+17
+46
+COMMAND: I 2 200
+Before insert operation:
+Capacity = 32
+Size = 15
+100
+56
+99
+13
+32
+14
+49
+3
+4
+2
+10
+11
+8
+17
+46
+After insert operation:
+Capacity = 32
+Size = 16
+200
+100
+99
+56
+32
+14
+49
+13
+4
+2
+10
+11
+8
+17
+46
+3
+COMMAND: R
+COMMAND: W
+Capacity = 32
+Size = 10
+250
+32
+49
+13
+10
+11
+17
+8
+4
+2
+COMMAND: K 2 16 20
+Error: invalid index
+COMMAND: C 5
+COMMAND: R
+Error: array size exceeds heap capacity
+COMMAND: W
+Capacity = 5
+Size = 0
+COMMAND: C 10
+COMMAND: W
+Capacity = 10
+Size = 0
+COMMAND: R
+COMMAND: W
+Capacity = 10
+Size = 10
+250
+32
+49
+13
+10
+11
+17
+8
+4
+2
+COMMAND: S

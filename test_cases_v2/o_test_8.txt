@@ -1,0 +1,118 @@
+COMMAND: C 10
+COMMAND: W
+Capacity = 10
+Size = 0
+COMMAND: R
+COMMAND: W
+Capacity = 10
+Size = 10
+250
+32
+49
+13
+10
+11
+17
+8
+4
+2
+COMMAND: D 1
+Deleted max = 250
+COMMAND: D 2
+Before delete max operation:
+Capacity = 10
+Size = 9
+49
+32
+17
+13
+10
+11
+2
+8
+4
+After delete max operation:
+Capacity = 10
+Size = 8
+32
+13
+17
+8
+10
+11
+2
+4
+Deleted max = 49
+COMMAND: D 10
+Error: invalid flag value
+COMMAND: D 1
+Deleted max = 32
+COMMAND: D 1
+Deleted max = 17
+COMMAND: D 1
+Deleted max = 13
+COMMAND: D 1
+Deleted max = 11
+COMMAND: D 1
+Deleted max = 10
+COMMAND: D 1
+Deleted max = 8
+COMMAND: D 1
+Deleted max = 4
+COMMAND: D 1
+Deleted max = 2
+COMMAND: D 1
+Error: heap empty
+COMMAND: D 3
+Error: heap empty
+COMMAND: I 2 13
+Before insert operation:
+Capacity = 10
+Size = 0
+After insert operation:
+Capacity = 10
+Size = 1
+13
+COMMAND: R
+COMMAND: W
+Capacity = 10
+Size = 10
+250
+32
+49
+13
+10
+11
+17
+8
+4
+2
+COMMAND: I 2 26
+Before insert operation:
+Capacity = 10
+Size = 10
+250
+32
+49
+13
+10
+11
+17
+8
+4
+2
+After insert operation:
+Capacity = 16
+Size = 11
+250
+32
+49
+13
+26
+11
+17
+8
+4
+2
+10
+COMMAND: S

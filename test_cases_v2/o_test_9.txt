@@ -1,0 +1,82 @@
+COMMAND: C 10
+COMMAND: R
+COMMAND: W
+Capacity = 10
+Size = 10
+250
+32
+49
+13
+10
+11
+17
+8
+4
+2
+COMMAND: K 2 0 251
+Error: invalid index
+COMMAND: K 2 11 251
+Error: invalid index
+COMMAND: K 2 10 251
+Before increase key operation:
+Capacity = 10
+Size = 10
+250
+32
+49
+13
+10
+11
+17
+8
+4
+2
+After increase key operation:
+Capacity = 10
+Size = 10
+251
+250
+49
+13
+32
+11
+17
+8
+4
+10
+COMMAND: K 0 0 252
+Error: invalid flag value
+COMMAND: K 0 2 252
+Error: invalid flag value
+COMMAND: K 1 1 6
+Error: new key is smaller than current key
+COMMAND: K 1 1 60
+Error: new key is smaller than current key
+COMMAND: W
+Capacity = 10
+Size = 10
+251
+250
+49
+13
+32
+11
+17
+8
+4
+10
+COMMAND: K 1 3 60
+COMMAND: W
+Capacity = 10
+Size = 10
+251
+250
+60
+13
+32
+11
+17
+8
+4
+10
+COMMAND: S

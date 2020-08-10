@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# run "chmod u+x run_tests" on this file to be able to run it
+# Execute using "./run_tests &> run_tests_output.txt"
+
+TEST_ERROR=0
+system_output=0
+
+function run_test {
+	echo "--- Start $1 ---"
+	timeout 60 ./run < $2 > $3
+	system_output=$(echo $?)
+	
+	if [ $system_output -eq 0 ]
+	then
+		echo "$1 completed"
+		echo "Comparing generated output with expected output"
+		
+		cmp $3 $4
+		if [ $? -eq 0 ]
+		then
+			echo "Files are identical: Test succeeded"
+		else
+			echo "The above line is the first mismatch found."
+		fi
+	elif [ $system_output -eq 139 ]
+	then
+		echo "$1 had a segmentation fault"
+		TEST_ERROR=4   
+		#The error code for this is 139
+	else
+		echo "$1 went over a minute"
+		TEST_ERROR=2
+		#The error code is 124
+	fi
+}
+
+# Build project: -B forces everything to be rebuilt
+make -B
+
+if [ $? -ne 0 ]
+then
+	echo "Build failed for program"
+	TEST_ERROR=1
+else
+	echo "Build succeeded"
+	
+	echo "--- Run tests ---"
+	run_test "Test1" test_1.txt g_test1.txt o_test_1.txt
+	run_test "Test2" test_2.txt g_test2.txt o_test_2.txt
+	run_test "Test3" test_3.txt g_test3.txt o_test_3.txt
+	run_test "Test4" test_4.txt g_test4.txt o_test_4.txt
+	run_test "Test5" test_5.txt g_test5.txt o_test_5.txt
+	run_test "Test6" test_6.txt g_test6.txt o_test_6.txt
+	run_test "Test7" test_7.txt g_test7.txt o_test_7.txt
+	run_test "Test8" test_8.txt g_test8.txt o_test_8.txt
+	run_test "Test9" test_9.txt g_test9.txt o_test_9.txt
+	run_test "Test10" test_10.txt g_test10.txt o_test_10.txt
+	rm g_test*.txt
+fi

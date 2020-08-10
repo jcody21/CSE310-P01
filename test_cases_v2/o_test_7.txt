@@ -1,0 +1,53 @@
+COMMAND: C -1
+Error: invalid heap capacity
+COMMAND: C 0
+COMMAND: I 2 1
+Before insert operation:
+Capacity = 0
+Size = 0
+After insert operation:
+Capacity = 1
+Size = 1
+1
+COMMAND: I 2 2
+Before insert operation:
+Capacity = 1
+Size = 1
+1
+After insert operation:
+Capacity = 2
+Size = 2
+2
+1
+COMMAND: I 2 3
+Before insert operation:
+Capacity = 2
+Size = 2
+2
+1
+After insert operation:
+Capacity = 4
+Size = 3
+3
+1
+2
+COMMAND: I 0 4
+Error: invalid flag value
+COMMAND: I 1 4
+COMMAND: I 2 5
+Before insert operation:
+Capacity = 4
+Size = 4
+4
+3
+2
+1
+After insert operation:
+Capacity = 8
+Size = 5
+5
+4
+2
+1
+3
+COMMAND: S

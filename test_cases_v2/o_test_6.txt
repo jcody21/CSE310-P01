@@ -1,0 +1,10 @@
+COMMAND: C 9
+COMMAND: W
+Capacity = 9
+Size = 0
+COMMAND: R
+Error: array size exceeds heap capacity
+COMMAND: W
+Capacity = 9
+Size = 0
+COMMAND: S

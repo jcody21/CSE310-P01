@@ -1,0 +1,7 @@
+COMMAND: I 1 5
+Error: heap not initialized
+COMMAND: I 2 5
+Error: heap not initialized
+COMMAND: I 3 5
+Error: heap not initialized
+COMMAND: S

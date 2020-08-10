@@ -1,0 +1,3 @@
+COMMAND: W
+Error: heap not initialized
+COMMAND: S
